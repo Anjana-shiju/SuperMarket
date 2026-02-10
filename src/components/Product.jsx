@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+// Images Import
 import c1 from '../assets/c1.png'; 
 import c2 from '../assets/c2.png'; 
 import c3 from '../assets/c3.png'; 
@@ -31,11 +31,7 @@ const ProductSection = () => {
 
   const ProductCard = ({ item }) => (
     <div className="bg-white border border-gray-100 rounded-2xl relative flex flex-col shadow-sm h-full w-full overflow-hidden transition-all hover:shadow-md">
-      
-     
       <div className="bg-[#f2f3f5] h-24 md:h-36 w-full flex items-center justify-center relative p-3">
-        
-       
         <div className="absolute top-0 left-2 z-10">
           <div className="relative flex items-center justify-center">
             <svg width="22" height="28" viewBox="0 0 24 32" fill="none">
@@ -46,7 +42,6 @@ const ProductSection = () => {
           </div>
         </div>
 
-       
         <div className="absolute top-2 right-2 z-10">
           {item.qty > 0 ? (
             <div className="flex items-center gap-1.5 border border-green-500 rounded-lg px-1.5 py-0.5 text-green-600 font-bold text-[10px] bg-white shadow-sm">
@@ -62,17 +57,14 @@ const ProductSection = () => {
         <img src={item.image} alt="" className="h-full object-contain mix-blend-multiply" />
       </div>
 
-     
       <div className="p-2 md:p-3 flex flex-col flex-grow bg-white">
         <h3 className="text-[10px] md:text-[12px] font-bold text-gray-800 leading-tight line-clamp-2 h-7 md:h-9 mb-1">
           {item.name}
         </h3>
-
         <div className="mt-auto">
           <div className="flex justify-end pr-1 h-3">
              <span className="text-[8px] md:text-[9px] text-gray-400 line-through">₹{item.oldPrice}</span>
           </div>
-          
           <div className="flex justify-between items-center">
             <div className="flex items-center text-gray-500 text-[10px] font-medium">
               <span>{item.weight}</span>
@@ -88,11 +80,10 @@ const ProductSection = () => {
   );
 
   return (
-   
-    <div className="w-full bg-[#F3F4F6] py-10 space-y-12">
+    <div className="w-full bg-[#F3F4F6] py-10 space-y-12 font-sans">
       <div className="max-w-[1400px] mx-auto px-4 md:px-6">
         
-       
+        {/* Recommended Section */}
         <section className="mb-14">
           <div className="flex justify-between items-center mb-6 px-1">
             <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900">Recommended for you</h2>
@@ -103,36 +94,54 @@ const ProductSection = () => {
               </div>
             </div>
           </div>
-
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
             {recommendedProducts.map(p => <ProductCard key={`rec-${p.id}`} item={p} />)}
           </div>
         </section>
 
-      <section className="bg-gradient-to-br from-[#EFFFF4] to-[#dcfce7] py-6 rounded-[30px] px-4 md:px-8 relative shadow-sm border border-green-100">
-  <div className="flex justify-between items-center mb-5">
-    
-   
-    <h2 className="text-[16px] md:text-[20px] font-black text-[#FFAB00] tracking-tight">
-      Flash Sale
-    </h2>
-    
-    
-    <div className="flex gap-1.5 items-center">
-      {['02h', '30m', '02s'].map((time, index) => (
-        <div key={index} className="bg-white/90 px-2 py-1 rounded-md shadow-sm border border-orange-200">
-          <span className="text-[#FF4D4D] font-bold text-[11px] md:text-[13px] tabular-nums">
-            {time}
-          </span>
-        </div>
-      ))}
-    </div>
-  </div>
+        {/* Flash Sale Section */}
+        <section className="bg-[#EFFFF4] py-6 rounded-[30px] px-4 md:px-8 relative shadow-sm border border-green-100">
+          <div className="flex justify-between items-center mb-5">
+            <h2 className="text-[16px] md:text-[20px] font-black text-[#FFAB00] tracking-tight">Flash Sale</h2>
+            <div className="flex gap-1.5 items-center">
+              {['02h', '30m', '02s'].map((time, index) => (
+                <div key={index} className="bg-white/90 px-2 py-1 rounded-md shadow-sm border border-orange-200">
+                  <span className="text-[#FF4D4D] font-bold text-[11px] md:text-[13px] tabular-nums">{time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
-    {flashSaleProducts.map(p => <ProductCard key={`flash-${p.id}`} item={p} />)}
-  </div>
-</section>
+          <div className="relative">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+              {flashSaleProducts.map(p => <ProductCard key={`flash-${p.id}`} item={p} />)}
+            </div>
+
+            {/* BLACK ROUND BUTTON WITH WHITE ARROW */}
+           {/* Final Fix for Black Round Button with White Arrow */}
+<button 
+  className="absolute -right-5 top-1/2 -translate-y-1/2 z-[100] flex items-center justify-center shadow-2xl transition-all active:scale-90"
+  style={{ 
+    backgroundColor: '#1A1A1A', 
+    width: '40px', 
+    height: '40px', 
+    borderRadius: '50%', 
+    border: 'none',
+    padding: '0',
+    appearance: 'none'
+  }}
+>
+  <svg 
+    width="12" 
+    height="12" 
+    viewBox="0 0 24 24" 
+    style={{ fill: 'white', display: 'block', margin: 'auto' }}
+  >
+    <path d="M8 5v14l11-7z" />
+  </svg>
+</button>
+          </div>
+        </section>
 
       </div>
     </div>
