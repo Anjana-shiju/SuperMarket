@@ -67,8 +67,8 @@ const CombinedCategories = () => {
     <div className="w-full py-8 space-y-12">
       {/* 2. max-w-[1500px]: Desktop-il container width kootti */}
       <section className="max-w-[1500px] mx-auto px-4 md:px-10 lg:px-12">
-        <h2 className="text-[16px] md:text-[19px] lg:text-[22px] font-black text-gray-900 mb-6  tracking-wide">
-          Groceries & Kitchen
+        <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">
+          Groceries and Kitchen
         </h2>
         {/* lg:gap-6: Desktop-il cards thammil nalla gap nalki */}
         <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4 lg:gap-6">
@@ -77,8 +77,8 @@ const CombinedCategories = () => {
       </section>
 
       <section className="max-w-[1500px] mx-auto px-4 md:px-10 lg:px-12">
-        <h2 className="text-[16px] md:text-[19px] lg:text-[22px] font-black text-gray-900 mb-6  tracking-wide">
-          Baby & Kids
+        <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">
+          Baby and Kids
         </h2>
         <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4 lg:gap-6">
           {groceriesData.map((item, index) => <CategoryCard key={`baby-${index}`} item={item} />)}
