@@ -49,7 +49,7 @@ const CategoryBar = () => {
               />
               
               {/* Decorative Green Curve at bottom (from your reference image) */}
-              <div className="absolute bottom-[-15px] left-0 w-full h-10 bg-[#e9f7f0] rounded-[100%] opacity-90"></div>
+              <div className="absolute bottom-[-15px] left-0 w-full h-10 bg-[#dcfcec] rounded-[100%] opacity-90"></div>
             </div>
           </div>
         ))}
