@@ -19,22 +19,22 @@ const TopBrands = () => {
   ];
 
   return (
-    /* Main Section Background: Gray aakki */
+    
     <section className="w-full bg-[#F3F4F6] py-8">
       
       <div className="max-w-[1400px] mx-auto px-4 md:px-6">
         
-        {/* Title: Clarity-kk vendi font size kurach koode kooti */}
+       
         <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">
           Top Brands
         </h2>
 
-        {/* Grid: 3 columns on mobile, 6 on desktop */}
+       
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
           {brands.map((brand) => (
             <div 
               key={brand.id} 
-              /* Card background white aayi thanne nirthi */
+              
               className="bg-white border border-gray-100 rounded-2xl 
                          flex items-center justify-center 
                          h-[85px] md:h-[120px] 

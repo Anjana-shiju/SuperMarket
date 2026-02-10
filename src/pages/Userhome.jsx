@@ -10,13 +10,13 @@ import Footer from '../components/Footer';
 
 const UserHome = () => {
   return (
-    /* 1. bg-[#F3F4F6] (Gray) nalki, 2. h-screen maatti min-h-screen aakki */
+    
     <div className="w-full min-h-screen bg-[#F3F4F6] flex flex-col">
       
-      {/* Navbar ippo white background-il separate aayi nilkum */}
+     
       <Navbar />
       
-      {/* Baaki sections ellam gray background-il neat aayi varum */}
+      
       <main className="flex-grow">
         <CategoryBar/>
         <PromoBanner/>
@@ -26,7 +26,7 @@ const UserHome = () => {
         <CombinedCategories/>
       </main>
       
-      {/* Footer vibrant green-il perfect finishing nalkum */}
+      
       <Footer/>
       
     </div>

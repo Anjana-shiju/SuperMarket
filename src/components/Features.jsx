@@ -1,13 +1,13 @@
 import React from 'react';
 
-// Banners (a1 to a5)
+
 import b1 from '../assets/a1.png'; 
 import b2 from '../assets/a2.png'; 
 import b3 from '../assets/a3.png'; 
 import b4 from '../assets/a4.png'; 
 import b5 from '../assets/a5.png'; 
 
-// AI Assistant Icons
+
 import recipeImg from '../assets/b1.png';
 import picksImg from '../assets/b2.png';
 import mealImg from '../assets/b3.png';
@@ -24,7 +24,7 @@ const Features = () => {
   return (
     <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-8 flex flex-col gap-6 font-sans items-start">
       
-      {/* --- TOP ROW: 5 BANNERS --- */}
+     
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 w-full">
         {smallBanners.map((item) => (
           <div key={item.id} className={`${item.color} rounded-[20px] md:rounded-[24px] p-3 md:p-4 flex flex-col justify-between relative h-[125px] md:h-[140px] shadow-sm overflow-hidden`}>
@@ -42,7 +42,7 @@ const Features = () => {
         ))}
       </div>
 
-      {/* --- AI GROCERY ASSISTANT --- */}
+     
       <div className="w-full max-w-[850px] bg-[#fff4e1] rounded-[35px] p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-sm border border-orange-100/50">
         
         <div className="max-w-[250px] text-center lg:text-left mb-6 lg:mb-0">
@@ -58,7 +58,7 @@ const Features = () => {
 
         </div>
 
-        {/* AI Cards: Grid upayogichu, mobile-il space kurachu neat aakki */}
+        
         <div className="grid grid-cols-3 gap-2 md:gap-3 w-full lg:w-auto">
           {[
             { title: "Recipe Suggestions", img: recipeImg, btn: "Browse" },

@@ -1,10 +1,10 @@
 import React from 'react';
 
-// Images Import
-import c1 from '../assets/c1.png'; // Chocolate
-import c2 from '../assets/c2.png'; // Almond Milk
-import c3 from '../assets/c3.png'; // Tomato
-import c4 from '../assets/c4.png'; // Broccoli
+
+import c1 from '../assets/c1.png'; 
+import c2 from '../assets/c2.png'; 
+import c3 from '../assets/c3.png'; 
+import c4 from '../assets/c4.png'; 
 
 const ProductSection = () => {
   const recommendedProducts = [
@@ -32,10 +32,10 @@ const ProductSection = () => {
   const ProductCard = ({ item }) => (
     <div className="bg-white border border-gray-100 rounded-2xl relative flex flex-col shadow-sm h-full w-full overflow-hidden transition-all hover:shadow-md">
       
-      {/* 1. Light Grey Shade for Image area to make it pop */}
+     
       <div className="bg-[#f2f3f5] h-24 md:h-36 w-full flex items-center justify-center relative p-3">
         
-        {/* Discount Tag */}
+       
         <div className="absolute top-0 left-2 z-10">
           <div className="relative flex items-center justify-center">
             <svg width="22" height="28" viewBox="0 0 24 32" fill="none">
@@ -46,7 +46,7 @@ const ProductSection = () => {
           </div>
         </div>
 
-        {/* Add Button */}
+       
         <div className="absolute top-2 right-2 z-10">
           {item.qty > 0 ? (
             <div className="flex items-center gap-1.5 border border-green-500 rounded-lg px-1.5 py-0.5 text-green-600 font-bold text-[10px] bg-white shadow-sm">
@@ -62,7 +62,7 @@ const ProductSection = () => {
         <img src={item.image} alt="" className="h-full object-contain mix-blend-multiply" />
       </div>
 
-      {/* Text & Price Info */}
+     
       <div className="p-2 md:p-3 flex flex-col flex-grow bg-white">
         <h3 className="text-[10px] md:text-[12px] font-bold text-gray-800 leading-tight line-clamp-2 h-7 md:h-9 mb-1">
           {item.name}
@@ -88,11 +88,11 @@ const ProductSection = () => {
   );
 
   return (
-    /* Main Background: bg-[#F3F4F6] (Matches Brands & Home) */
+   
     <div className="w-full bg-[#F3F4F6] py-10 space-y-12">
       <div className="max-w-[1400px] mx-auto px-4 md:px-6">
         
-        {/* RECOMMENDED SECTION */}
+       
         <section className="mb-14">
           <div className="flex justify-between items-center mb-6 px-1">
             <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900">Recommended for you</h2>
@@ -112,12 +112,12 @@ const ProductSection = () => {
       <section className="bg-gradient-to-br from-[#EFFFF4] to-[#dcfce7] py-6 rounded-[30px] px-4 md:px-8 relative shadow-sm border border-green-100">
   <div className="flex justify-between items-center mb-5">
     
-    {/* 1. Flash Sale Title: Size kurachu */}
+   
     <h2 className="text-[16px] md:text-[20px] font-black text-[#FFAB00] tracking-tight">
       Flash Sale
     </h2>
     
-    {/* 2. Timer: Compact Boxes */}
+    
     <div className="flex gap-1.5 items-center">
       {['02h', '30m', '02s'].map((time, index) => (
         <div key={index} className="bg-white/90 px-2 py-1 rounded-md shadow-sm border border-orange-200">

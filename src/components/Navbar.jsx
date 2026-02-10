@@ -8,7 +8,7 @@ const Navbar = () => {
       
       <div className="w-full px-2 md:px-12 lg:px-20 py-3 flex items-center justify-between">
         
-        {/* --- 1. LOGO --- */}
+      
        <div className="flex-shrink-0">
   <img 
     src={logo} 
@@ -18,11 +18,11 @@ const Navbar = () => {
   />
 </div>
 
-        {/* --- 2. MIDDLE GROUP: Location + Search --- */}
+      
         <div className="flex flex-1 items-center justify-center gap-2 md:gap-5 mx-1 md:mx-6">
           <div className="flex items-center gap-0.5 text-gray-800 font-bold cursor-pointer shrink-0">
             <MapPin size={16} className="text-gray-600" strokeWidth={2.5} />
-            {/* Mobile-il location hide cheyyunnathaanu search bar-inu space kittan nallathu */}
+           
             <span className="hidden md:inline text-sm">Location</span>
           </div>
 
@@ -36,10 +36,10 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* --- 3. ACTION ICONS: Mobile-ilum labels kaanum --- */}
+        
         <div className="flex items-center gap-2.5 md:gap-8 lg:gap-10 shrink-0">
           
-          {/* AI Icon */}
+         
           <div className="flex flex-col items-center cursor-pointer group">
             <div className="relative w-5 h-5 md:w-7 md:h-7 flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="none" stroke="#14b814" strokeWidth="2.5" strokeLinecap="round" className="w-full h-full">
@@ -54,13 +54,13 @@ const Navbar = () => {
             <span className="text-[7px] md:text-[10px] font-bold text-gray-400 mt-0.5 uppercase">AI</span>
           </div>
 
-          {/* Offers - Hidden class maatti */}
+          
           <div className="flex flex-col items-center cursor-pointer group">
             <BadgePercent size={18} className="text-gray-700 md:w-6 md:h-6 group-hover:text-green-600" />
             <span className="text-[7px] md:text-[10px] font-bold text-gray-400 mt-0.5 uppercase">Offers</span>
           </div>
 
-          {/* Cart - Hidden class maatti */}
+         
           <div className="flex flex-col items-center cursor-pointer relative group">
             <div className="relative">
               <ShoppingCart size={18} className="text-gray-700 md:w-6 md:h-6 group-hover:text-green-600" />
@@ -69,7 +69,7 @@ const Navbar = () => {
             <span className="text-[7px] md:text-[10px] font-bold text-gray-400 mt-0.5 uppercase">Cart</span>
           </div>
 
-          {/* Profile - Hidden class maatti */}
+          
           <div className="flex flex-col items-center cursor-pointer group">
             <div className="bg-gray-200 rounded-full p-0.5 text-gray-600 group-hover:bg-gray-300">
               <User size={18} className="md:w-7 md:h-7" />
