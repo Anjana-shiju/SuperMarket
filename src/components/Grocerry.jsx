@@ -38,26 +38,24 @@ const CombinedCategories = () => {
     { name: "Specialty Items", img: e16 },
   ];
 
- const CategoryCard = ({ item }) => (
+  const CategoryCard = ({ item }) => (
     <div className="flex flex-col cursor-pointer group w-full">
-      {/* 1. h-[140px] md:h-[160px]: Ellaa card-inum ore height nalki.
-         2. w-full: Grid column-te muzhuvan width edukkuan.
-      */}
-      <div className="bg-[#E8F3EE] rounded-2xl p-2 flex flex-col items-center justify-between transition-all hover:shadow-md hover:scale-[1.05] h-[130px] md:h-[155px] w-full">
+      {/* 1. lg:h-[180px]: Desktop-il mathram card height kootti */}
+      <div className="bg-[#E8F3EE] rounded-2xl p-2 lg:p-4 flex flex-col items-center justify-between transition-all hover:shadow-lg hover:scale-[1.05] h-[130px] md:h-[155px] lg:h-[180px] w-full">
         
-        {/* Text Area: h-[40px] nalkiyathu kond 1 line aayaalum 2 line aayaalum card size maarilla */}
-        <div className="h-[35px] md:h-[40px] flex items-center justify-center w-full">
-          <span className="text-[10px] md:text-[11px] font-bold text-gray-700 text-center leading-tight px-1 line-clamp-2">
+        {/* Text Area: Desktop-il font size lesham kootti (lg:text-[13px]) */}
+        <div className="h-[35px] md:h-[40px] lg:h-[45px] flex items-center justify-center w-full">
+          <span className="text-[10px] md:text-[11px] lg:text-[13px] font-black text-gray-700 text-center leading-tight px-1 line-clamp-2">
             {item.name}
           </span>
         </div>
 
-        {/* Image Area: flex-grow upayogich baaki ulla space muzhuvan eduthu */}
+        {/* Image Area */}
         <div className="flex-grow flex items-center justify-center w-full pb-2">
           <img 
             src={item.img} 
             alt={item.name} 
-            className="max-w-[90%] max-h-[90%] object-contain"
+            className="max-w-[90%] max-h-[90%] object-contain group-hover:scale-110 transition-transform duration-300"
             onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Error'; }}
           />
         </div>
@@ -67,16 +65,22 @@ const CombinedCategories = () => {
 
   return (
     <div className="w-full py-8 space-y-12">
-      <section className="max-w-[1400px] mx-auto px-4 md:px-6">
-        <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">Groceries & Kitchen</h2>
-        <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4">
+      {/* 2. max-w-[1500px]: Desktop-il container width kootti */}
+      <section className="max-w-[1500px] mx-auto px-4 md:px-10 lg:px-12">
+        <h2 className="text-[16px] md:text-[19px] lg:text-[22px] font-black text-gray-900 mb-6  tracking-wide">
+          Groceries & Kitchen
+        </h2>
+        {/* lg:gap-6: Desktop-il cards thammil nalla gap nalki */}
+        <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4 lg:gap-6">
           {groceriesData.map((item, index) => <CategoryCard key={`grocery-${index}`} item={item} />)}
         </div>
       </section>
 
-      <section className="max-w-[1400px] mx-auto px-4 md:px-6">
-        <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">Baby & Kids</h2>
-        <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4">
+      <section className="max-w-[1500px] mx-auto px-4 md:px-10 lg:px-12">
+        <h2 className="text-[16px] md:text-[19px] lg:text-[22px] font-black text-gray-900 mb-6  tracking-wide">
+          Baby & Kids
+        </h2>
+        <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-3 md:gap-4 lg:gap-6">
           {groceriesData.map((item, index) => <CategoryCard key={`baby-${index}`} item={item} />)}
         </div>
       </section>
