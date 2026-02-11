@@ -58,19 +58,19 @@ const ProductSection = () => {
       </div>
 
       <div className="p-2 md:p-3 flex flex-col flex-grow bg-white">
-        <h3 className="text-[10px] md:text-[12px] font-bold text-gray-800 leading-tight line-clamp-2 h-7 md:h-9 mb-1">
+        <h3 className="text-[10px] md:text-[12px] font-black text-black leading-tight line-clamp-2 h-7 md:h-9 mb-1">
           {item.name}
         </h3>
         <div className="mt-auto">
           <div className="flex justify-end pr-1 h-3">
-             <span className="text-[8px] md:text-[9px] text-gray-400 line-through">₹{item.oldPrice}</span>
+              <span className="text-[8px] md:text-[9px] text-gray-400 line-through">₹{item.oldPrice}</span>
           </div>
           <div className="flex justify-between items-center">
             <div className="flex items-center text-gray-500 text-[10px] font-medium">
               <span>{item.weight}</span>
               <svg className="w-2.5 h-2.5 ml-0.5 text-green-600" fill="none" stroke="currentColor" strokeWidth="4" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
             </div>
-            <div className="text-[12px] md:text-[14px] font-black text-gray-900">
+            <div className="text-[12px] md:text-[14px] font-black text-black">
               <span className="text-[10px] font-bold mr-0.5">₹</span>{item.price}
             </div>
           </div>
@@ -80,17 +80,18 @@ const ProductSection = () => {
   );
 
   return (
-    <div className="w-full bg-[#F3F4F6] py-10 space-y-12 font-sans">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+    <div className="w-full bg-[#F3F4F6] py-10 space-y-12 font-sans overflow-hidden">
+      {/* Alignment Fixed: Max-width broadened to match assistant section */}
+      <div className="max-w-[1300px] mx-auto px-6 md:px-10 lg:px-12">
         
         {/* Recommended Section */}
-        <section className="mb-14">
-          <div className="flex justify-between items-center mb-6 px-1">
-            <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900">Recommended for you</h2>
-            <div className="flex items-center gap-2 text-green-600 font-bold text-xs cursor-pointer hover:underline">
-              <span>See all</span>
-              <div className="bg-[#388E3C] text-white rounded-full p-1.5 flex items-center justify-center">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="4" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <section className="mb-10">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-[18px] md:text-[22px] font-black ">Recommended for you</h2>
+            <div className="flex items-center gap-2 text-[#388E3C] font-bold text-xs cursor-pointer group">
+              <span className="group-hover:underline">See all</span>
+              <div className="bg-[#388E3C] text-white rounded-full p-1.5 flex items-center justify-center transition-transform group-hover:translate-x-1 shadow-sm">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="3.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
               </div>
             </div>
           </div>
@@ -100,13 +101,13 @@ const ProductSection = () => {
         </section>
 
         {/* Flash Sale Section */}
-        <section className="bg-[#EFFFF4] py-6 rounded-[30px] px-4 md:px-8 relative shadow-sm border border-green-100">
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="text-[16px] md:text-[20px] font-black text-[#FFAB00] tracking-tight">Flash Sale</h2>
-            <div className="flex gap-1.5 items-center">
+        <section className="bg-[#EFFFF4] py-8 rounded-[40px] px-6 md:px-10 relative shadow-sm border border-green-500/10 overflow-visible">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-[20px] md:text-[24px] font-black text-[#FFAB00] tracking-tighter ">Flash Sale</h2>
+            <div className="flex gap-2 items-center">
               {['02h', '30m', '02s'].map((time, index) => (
-                <div key={index} className="bg-white/90 px-2 py-1 rounded-md shadow-sm border border-orange-200">
-                  <span className="text-[#FF4D4D] font-bold text-[11px] md:text-[13px] tabular-nums">{time}</span>
+                <div key={index} className="bg-white px-2.5 py-1.5 rounded-lg shadow-sm border border-orange-100/50">
+                  <span className="text-[#FF4D4D] font-black text-[12px] md:text-[14px] tabular-nums">{time}</span>
                 </div>
               ))}
             </div>
@@ -117,28 +118,47 @@ const ProductSection = () => {
               {flashSaleProducts.map(p => <ProductCard key={`flash-${p.id}`} item={p} />)}
             </div>
 
-            {/* BLACK ROUND BUTTON WITH WHITE ARROW */}
-           {/* Final Fix for Black Round Button with White Arrow */}
-<button 
+            {/* Scrolling Button: Pure White Arrow & Fixed Position */}
+           <button 
+
   className="absolute -right-5 top-1/2 -translate-y-1/2 z-[100] flex items-center justify-center shadow-2xl transition-all active:scale-90"
+
   style={{ 
+
     backgroundColor: '#1A1A1A', 
+
     width: '40px', 
+
     height: '40px', 
+
     borderRadius: '50%', 
+
     border: 'none',
+
     padding: '0',
+
     appearance: 'none'
+
   }}
+
 >
+
   <svg 
+
     width="12" 
+
     height="12" 
+
     viewBox="0 0 24 24" 
+
     style={{ fill: 'white', display: 'block', margin: 'auto' }}
+
   >
+
     <path d="M8 5v14l11-7z" />
+
   </svg>
+
 </button>
           </div>
         </section>

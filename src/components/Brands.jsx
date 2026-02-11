@@ -19,32 +19,32 @@ const TopBrands = () => {
   ];
 
   return (
-    
-    <section className="w-full bg-[#F3F4F6] py-8">
+    // Background color common aayittu ulla light grey
+    <section className="w-full bg-[#F3F4F6] py-10">
       
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6">
+      {/* Alignment Fixed: Broadened to match Grocery Assistant & Product Section */}
+      <div className="max-w-[1300px] mx-auto px-6 md:px-12">
         
-       
-        <h2 className="text-[16px] md:text-[19px] font-bold text-gray-900 mb-6">
+        {/* Heading: Bold and Black as per Figma */}
+        <h2 className="text-[18px] md:text-[22px] font-black text-black mb-6 tracking-tight">
           Top Brands
         </h2>
 
-       
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+        {/* Grid: Spacing fixed to align with the cards above */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-5">
           {brands.map((brand) => (
             <div 
               key={brand.id} 
-              
-              className="bg-white border border-gray-100 rounded-2xl 
+              className="bg-white border border-gray-100 rounded-[24px] 
                          flex items-center justify-center 
-                         h-[85px] md:h-[120px] 
+                         h-[90px] md:h-[130px] 
                          p-4 md:p-6 shadow-sm
-                         transition-all hover:shadow-md hover:border-green-400 cursor-pointer"
+                         transition-all hover:shadow-md hover:border-green-100 cursor-pointer"
             >
               <img 
                 src={brand.logo} 
                 alt="Brand Logo" 
-                className="max-h-[80%] max-w-[85%] object-contain"
+                className="max-h-[75%] max-w-[80%] object-contain"
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Brand'; }}
               />
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import c1 from '../assets/div1.png';
 import c2 from '../assets/div2.png';
 import c3 from '../assets/div3.png';
@@ -27,29 +26,33 @@ const CategoryBar = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-8">
+    <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-6">
       
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-3 md:gap-4">
+      {/* ---------- FIXED: Gap and Card Width ---------- */}
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-2 md:gap-3">
         {categories.map((cat) => (
           <div 
             key={cat.id} 
-            className="flex flex-col items-center bg-white border border-gray-100 rounded-2xl p-2 hover:shadow-lg transition-all cursor-pointer group shadow-sm"
+            className="flex flex-col items-center bg-white border border-gray-200 rounded-xl p-1.5 hover:shadow-md transition-all cursor-pointer w-full max-w-[110px] mx-auto"
           >
-           
-            <h3 className="text-[10px] md:text-[11px] font-bold text-gray-800 text-center mb-2 leading-tight h-7 flex items-center justify-center overflow-hidden">
+            {/* Category Name - Exact spacing */}
+            <h3 className="text-[11px] md:text-[12px] font-semibold text-gray-800 text-center leading-tight h-8 flex items-center justify-center px-0.5 mb-1">
               {cat.name}
             </h3>
             
-           
-            <div className="w-full aspect-square relative rounded-xl overflow-hidden bg-[#f8fcfb] flex items-center justify-center">
-              <img 
-                src={cat.img} 
-                alt={cat.name} 
-                className="w-[90%] h-[90%] object-contain group-hover:scale-110 transition-transform duration-300 z-10" 
-              />
+            {/* Image Container with Fixed Size */}
+            <div className="w-full relative flex justify-center">
+              {/* Green Arc - Exact position */}
+              <div className="absolute bottom-0 left-0 w-full h-10 bg-[#e0f2e6] rounded-tl-2xl rounded-tr-2xl"></div>
               
-             
-              <div className="absolute bottom-[-15px] left-0 w-full h-10 bg-[#dcfcec] rounded-[100%] opacity-90"></div>
+              {/* Image - Fixed dimensions */}
+              <div className="relative z-10 flex justify-center items-center">
+                <img 
+                  src={cat.img} 
+                  alt={cat.name} 
+                  className="w-[75px] h-[75px] md:w-[85px] md:h-[85px] object-contain"
+                />
+              </div>
             </div>
           </div>
         ))}
@@ -59,3 +62,7 @@ const CategoryBar = () => {
 };
 
 export default CategoryBar;
+
+
+
+
