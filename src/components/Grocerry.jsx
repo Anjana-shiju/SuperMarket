@@ -79,58 +79,41 @@ const CombinedCategories = () => {
 
 
   const CategoryCard = ({ item }) => (
-
-    <div className="flex flex-col cursor-pointer group w-full">
-
-     
-
-      <div className="bg-[#E8F3EE] rounded-2xl p-2 lg:p-4 flex flex-col items-center justify-between transition-all hover:shadow-lg hover:scale-[1.05] h-[130px] md:h-[155px] lg:h-[180px] w-full">
-
-       
-
-       
-
-        <div className="h-[10px] md:h-[10px] sm:h-[25px] flex items-center justify-center w-full">
-
-          <span className="text-[10px] md:text-[11px] lg:text-[15px]  text-black text-center leading-tight px-1 line-clamp-2">
-
+    <div className="flex flex-col cursor-pointer group items-center py-2">
+      {/* CARD: Exact Figma Specs */}
+      <div 
+        className="transition-all hover:shadow-lg hover:scale-[1.05] flex flex-col items-center justify-between"
+        style={{
+          width: '110px',           // Fixed Figma Width
+          height: '120px',          // Fixed Figma Height
+          backgroundColor: '#27AE601A', // Ningalude athe color
+          borderRadius: '10px',     // Figma Radius
+          padding: '11px 1px',      // Figma Padding
+        }}
+      >
+        {/* Title Section - Ningalude athe font/text settings */}
+        <div className="h-[25px] flex items-center justify-center w-full">
+          <span className="text-[10px] md:text-[11px] lg:text-[15px] text-black text-center leading-tight px-1 line-clamp-2">
             {item.name}
-
           </span>
-
         </div>
 
-
-
-       
-
-        <div className="flex-grow flex items-center justify-center w-full pb-2">
-
+        {/* Image Section - Ningalude athe settings */}
+        <div className="flex-grow flex items-center justify-center w-full pb-2 overflow-hidden">
           <img
-
             src={item.img}
-
             alt={item.name}
-
-            className="max-w-[90%] max-h-[90%] object-contain group-hover:scale-110 transition-transform duration-300"
-
+            className="max-w-[150%] max-h-[90%] object-contain group-hover:scale-110 transition-transform duration-300"
             onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Error'; }}
-
           />
-
         </div>
-
       </div>
-
     </div>
-
   );
-
-
 
   return (
 
-    <div className="w-full py-8 space-y-12">
+    <div className="w-full py-8 space-y-12 ">
 
      
 

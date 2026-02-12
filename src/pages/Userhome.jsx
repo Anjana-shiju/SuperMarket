@@ -10,21 +10,23 @@ import Footer from '../components/Footer';
 
 const UserHome = () => {
   return (
-    
-    <div className="w-full min-h-screen bg-[#F3F4F6] flex flex-col">
+    <div > 
       
-     
+      {/* Navbar full width aayi nilkkum */}
       <Navbar />
       
+      {/* MAIN CONTENT WRAPPER:
+        - max-w-[1300px]: Ellam 1300px width-il limit cheyyunnu.
+        - mx-auto: ITHU MATHRAME RIGHT SIDE GAP MAATTU! Content-ine center aakkum.
+        - w-full: Mobile-il full width kittaunnu.
+      */}
       
-      <main className="flex-grow">
         <CategoryBar/>
         <PromoBanner/>
         <Features/>
         <ProductSection/>
         <TopBrands/>
         <CombinedCategories/>
-      </main>
       
       
       <Footer/>

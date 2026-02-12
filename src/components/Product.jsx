@@ -29,9 +29,19 @@ const ProductSection = () => {
     { id: 16, name: "Amul Dark Chocolate 70% Cocoa", weight: "200g", price: 180, oldPrice: 200, discount: 5, image: c1, qty: 1 },
   ];
 
-  const ProductCard = ({ item }) => (
-    <div className="bg-white border border-gray-100 rounded-2xl relative flex flex-col shadow-sm h-full w-full overflow-hidden transition-all hover:shadow-md">
-      <div className="bg-[#f2f3f5] h-24 md:h-36 w-full flex items-center justify-center relative p-3">
+ const ProductCard = ({ item }) => (
+    /* CARD CONTAINER: Exact Figma Specs */
+    <div 
+      className="bg-white relative flex flex-col shadow-sm overflow-hidden transition-all hover:shadow-md"
+      style={{
+        width: '140.89px',    // Fixed Figma Width
+        height: '212.63px',   // Fixed Figma Height
+        borderRadius: '10px',  // Figma Radius
+        border: '1px solid #F3F4F6'
+      }}
+    >
+      {/* Image Section - Ningalude athe color & design */}
+      <div className="bg-[#E5E5E5] h-24 md:h-32 w-full flex items-center justify-center relative p-3">
         <div className="absolute top-0 left-2 z-10">
           <div className="relative flex items-center justify-center">
             <svg width="22" height="28" viewBox="0 0 24 32" fill="none">
@@ -57,20 +67,21 @@ const ProductSection = () => {
         <img src={item.image} alt="" className="h-full object-contain mix-blend-multiply" />
       </div>
 
-      <div className="p-2 md:p-3 flex flex-col flex-grow bg-white">
-        <h3 className="text-[10px] md:text-[12px] font-black text-black leading-tight line-clamp-2 h-7 md:h-9 mb-1">
+      {/* Content Section - Text & Font ningal nalkiyathu pole thanne */}
+      <div className="p-2 flex flex-col flex-grow bg-white">
+        <h3 className="text-[10px] md:text-[11px] font-black text-black leading-tight line-clamp-2 h-7 mb-1">
           {item.name}
         </h3>
         <div className="mt-auto">
           <div className="flex justify-end pr-1 h-3">
-              <span className="text-[8px] md:text-[9px] text-gray-400 line-through">₹{item.oldPrice}</span>
+              <span className="text-[8px] text-gray-400 line-through">₹{item.oldPrice}</span>
           </div>
           <div className="flex justify-between items-center">
             <div className="flex items-center text-gray-500 text-[10px] font-medium">
               <span>{item.weight}</span>
               <svg className="w-2.5 h-2.5 ml-0.5 text-green-600" fill="none" stroke="currentColor" strokeWidth="4" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
             </div>
-            <div className="text-[12px] md:text-[14px] font-black text-black">
+            <div className="text-[12px] font-black text-black">
               <span className="text-[10px] font-bold mr-0.5">₹</span>{item.price}
             </div>
           </div>
@@ -101,9 +112,9 @@ const ProductSection = () => {
         </section>
 
         {/* Flash Sale Section */}
-        <section className="bg-[#EFFFF4] py-8 rounded-[40px] px-6 md:px-10 relative shadow-sm border border-green-500/10 overflow-visible">
+        <section className="bg-[#EAFFF3] py-8 rounded-[40px] px-6 md:px-10 relative shadow-sm border border-green-500/10 overflow-visible">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-[20px] md:text-[24px] font-black text-[#FFAB00] tracking-tighter ">Flash Sale</h2>
+            <h2 className="text-[20px] md:text-[24px] font-black text-[#F39C12] tracking-tighter ">Flash Sale</h2>
             <div className="flex gap-2 items-center">
               {['02h', '30m', '02s'].map((time, index) => (
                 <div key={index} className="bg-white px-2.5 py-1.5 rounded-lg shadow-sm border border-orange-100/50">
@@ -114,7 +125,7 @@ const ProductSection = () => {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-8">
               {flashSaleProducts.map(p => <ProductCard key={`flash-${p.id}`} item={p} />)}
             </div>
 

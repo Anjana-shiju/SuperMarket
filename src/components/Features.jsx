@@ -42,61 +42,43 @@ const Features = () => {
 
   return (
 
-    <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-8 flex flex-col gap-6 font-sans items-start">
+    <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-6 flex flex-col gap-6 font-sans items-start">
 
      
 
       {/* Banner Cards Grid */}
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 w-full">
-
-        {smallBanners.map((item) => (
-
-          <div key={item.id} className={`${item.color} rounded-[20px] md:rounded-[24px] p-3 md:p-4 flex flex-col justify-between relative h-[125px] md:h-[140px] shadow-sm overflow-hidden`}>
-
-            <div className="z-20 flex flex-col h-full justify-between items-start">
-
-              <div>
-
-                <h4 className={`text-[10px] md:text-[12px] font-black ${item.textColor} leading-tight`}>{item.title}</h4>
-
-                <p className="text-[8px] md:text-[9px] text-gray-500 font-bold leading-tight opacity-70">{item.desc}</p>
-
-              </div>
-
-             
-
-              {/* FIXED BUTTON: Added rounded-full and px-3 for better shape */}
-
-             <button
-  className="text-[2px] md:text-[2px] font-bold py-1.5 px-2 rounded-[2px] shadow-sm transition-all active:scale-45 whitespace-nowrap flex items-center justify-center"
+      {/* Banner Cards Grid - Ningalude athe boxes, No changes there */}
+<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 w-full">
+  {smallBanners.map((item) => (
+    <div key={item.id} className={`${item.color} rounded-[20px] md:rounded-[24px] p-3 md:p-4 flex flex-col justify-between relative h-[125px] md:h-[140px] shadow-sm overflow-hidden`}>
+      <div className="z-20 flex flex-col h-full justify-between items-start">
+        <div>
+          <h4 className={`text-[10px] md:text-[12px] font-black ${item.textColor} leading-tight`}>{item.title}</h4>
+          <p className="text-[8px] md:text-[9px] text-gray-500 font-bold leading-tight opacity-70">{item.desc}</p>
+        </div>
+        
+        {/* ONLY BUTTON SIZE CHANGED */}
+        <button
+  className="font-black !text-[11px] flex items-center justify-center transition-all active:scale-95 whitespace-nowrap"
   style={{ 
-    ...item.btnStyle, // Dynamic background/text colors
-    minHeight: '5px', // Fixed height as per design
-    minWidth: '5px'   // Uniform width for all buttons
+    ...item.btnStyle,
+    width: '87.05px',   // Ningal set aakiya perfect width
+    height: '28px',     // Ningal set aakiya perfect height
+    borderRadius: '6px' // Ningal set aakiya perfect radius
   }}
 >
   Order Now
 </button>
-
-            </div>
-
-           
-
-            <div className="absolute -right-1 -bottom-1 w-20 h-20 md:w-28 md:h-28 z-10">
-
-              <img src={item.img} alt="" className="w-full h-full object-contain" />
-
-            </div>
-
-          </div>
-
-        ))}
-
       </div>
-
-
-
+      
+      {/* IMAGE SIZE INCREASED */}
+      <div className="absolute -right-2 -bottom-2 w-24 h-24 md:w-32 md:h-32 z-10">
+        <img src={item.img} alt="" className="w-full h-full object-contain scale-110" />
+      </div>
+    </div>
+  ))}
+</div>
       {/* AI Grocery Assistant Section */}
 
       <div className="w-full max-w-[850px] bg-[#fff4e1] rounded-[35px] p-4 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-4 shadow-sm border border-orange-100/50">
@@ -135,7 +117,7 @@ const Features = () => {
        <button 
         className="w-full rounded-[8px] font-black text-[8px] md:text-[9px] flex items-center justify-center text-center mt-auto"
         style={{ 
-          backgroundColor: '#f7e6d7', // Design reference
+          backgroundColor: '#FDF2DF', // Design reference
           color: '#f2994a',
           height: '28px',            // Fixed height for all buttons
           lineHeight: '1',

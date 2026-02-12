@@ -19,27 +19,22 @@ const TopBrands = () => {
   ];
 
   return (
-    // Background color common aayittu ulla light grey
     <section className="w-full bg-[#F3F4F6] py-10">
-      
-      {/* Alignment Fixed: Broadened to match Grocery Assistant & Product Section */}
-      <div className="max-w-[1300px] mx-auto px-6 md:px-12">
-        
-        {/* Heading: Bold and Black as per Figma */}
+      <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-1">
         <h2 className="text-[18px] md:text-[22px] font-black text-black mb-6 tracking-tight">
           Top Brands
         </h2>
 
-        {/* Grid: Spacing fixed to align with the cards above */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-5">
           {brands.map((brand) => (
             <div 
               key={brand.id} 
-              className="bg-white border border-gray-100 rounded-[24px] 
+              // BORDER & RADIUS UPDATED: Figma Green Border
+              className="bg-white border border-[#27AE60] rounded-[15px] 
                          flex items-center justify-center 
                          h-[90px] md:h-[130px] 
                          p-4 md:p-6 shadow-sm
-                         transition-all hover:shadow-md hover:border-green-100 cursor-pointer"
+                         transition-all hover:shadow-md cursor-pointer"
             >
               <img 
                 src={brand.logo} 
@@ -54,5 +49,4 @@ const TopBrands = () => {
     </section>
   );
 };
-
 export default TopBrands;

@@ -27,32 +27,43 @@ const CategoryBar = () => {
 
   return (
     <div className="w-full max-w-[1400px] mx-auto px-4 md:px-10 lg:px-20 py-6">
-      
-      {/* ---------- FIXED: Gap and Card Width ---------- */}
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-2 md:gap-3">
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-2 md:gap-2">
         {categories.map((cat) => (
           <div 
             key={cat.id} 
-            className="flex flex-col items-center bg-white border border-gray-200 rounded-xl p-1.5 hover:shadow-md transition-all cursor-pointer w-full max-w-[110px] mx-auto"
+            className="flex flex-col items-center bg-white border border-gray-100 transition-all cursor-pointer relative overflow-hidden"
+            style={{
+              width: '110px',      // Figma Width
+              height: '120px',     // Figma Height
+              borderRadius: '10px' // Figma Radius
+            }}
           >
-            {/* Category Name - Exact spacing */}
-            <h3 className="text-[11px] md:text-[12px] font-semibold text-gray-800 text-center leading-tight h-8 flex items-center justify-center px-0.5 mb-1">
+            {/* Category Name */}
+            <h3 className="text-[10px] md:text-[11px] font-bold text-[#1E1E1E text-center leading-tight mt-3 mb-1 px-1 z-10">
               {cat.name}
             </h3>
             
-            {/* Image Container with Fixed Size */}
-            <div className="w-full relative flex justify-center">
-              {/* Green Arc - Exact position */}
-              <div className="absolute bottom-0 left-0 w-full h-10 bg-[#e0f2e6] rounded-tl-2xl rounded-tr-2xl"></div>
+            {/* Image & Arc Container */}
+            <div className="w-full mt-auto relative flex justify-center items-end h-full">
               
-              {/* Image - Fixed dimensions */}
-              <div className="relative z-10 flex justify-center items-center">
+              {/* 1. Image first (Z-Index low) */}
+              <div className="relative z-0 flex justify-center items-center pb-1">
                 <img 
                   src={cat.img} 
                   alt={cat.name} 
-                  className="w-[75px] h-[75px] md:w-[85px] md:h-[85px] object-contain"
+                  className="w-[50px] h-[70px] md:w-[80px] md:h-[80px] object-contain"
                 />
               </div>
+
+              {/* 2. GREEN ARC (Z-Index high, placed OVER the image bottom) */}
+              <div 
+                className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 rounded-full z-20"
+                style={{
+                  backgroundColor: '#DEFFEC', // Exact Figma Color
+                  width: '90px',           // Exact Figma Width
+                  height: '40px'           // Exact Figma Height
+                }}
+              ></div>
             </div>
           </div>
         ))}

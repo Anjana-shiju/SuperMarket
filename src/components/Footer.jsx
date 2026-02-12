@@ -6,7 +6,7 @@ import pokakLogo from '../assets/lo.png';
 const Footer = () => {
   return (
     
-    <footer className="w-full bg-[#45b55e] text-white pt-16 pb-12 mt-70 mb-0">
+    <footer className="w-full bg-[#27AE60] text-white pt-16 pb-12 mt-70 mb-0">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-8">
